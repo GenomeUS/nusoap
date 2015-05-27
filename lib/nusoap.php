@@ -7269,8 +7269,8 @@ class nusoap_client extends nusoap_base  {
 		$this->response_timeout = $response_timeout;
 		$this->portName = $portName;
 
-		$this->debug("ctor wsdl=$wsdl timeout=$timeout response_timeout=$response_timeout");
-		$this->appendDebug('endpoint=' . $this->varDump($endpoint));
+		#$this->debug("ctor wsdl=$wsdl timeout=$timeout response_timeout=$response_timeout");
+		#$this->appendDebug('endpoint=' . $this->varDump($endpoint));
 
 		// make values
 		if($wsdl){
@@ -7278,16 +7278,16 @@ class nusoap_client extends nusoap_base  {
 				$this->wsdl = $endpoint;
 				$this->endpoint = $this->wsdl->wsdl;
 				$this->wsdlFile = $this->endpoint;
-				$this->debug('existing wsdl instance created from ' . $this->endpoint);
+				#$this->debug('existing wsdl instance created from ' . $this->endpoint);
 				$this->checkWSDL();
 			} else {
 				$this->wsdlFile = $this->endpoint;
 				$this->wsdl = null;
-				$this->debug('will use lazy evaluation of wsdl from ' . $this->endpoint);
+				#$this->debug('will use lazy evaluation of wsdl from ' . $this->endpoint);
 			}
 			$this->endpointType = 'wsdl';
 		} else {
-			$this->debug("instantiate SOAP with endpoint at $endpoint");
+			#$this->debug("instantiate SOAP with endpoint at $endpoint");
 			$this->endpointType = 'soap';
 		}
 	}
